@@ -1,6 +1,10 @@
 # MACSwitch
 ```MACSwitch``` is a versatile tool designed for changing the MAC (Media Access Control) address of network interfaces on Linux systems. Whether you're concerned about privacy, bypassing MAC address filtering, or performing network experiments, ```MACSwitch``` provides a convenient way to modify your network interface's MAC address.
 
+
+![Example](https://github.com/m1dn1ghtMHR/Mac-switch/blob/main/usage.png)
+
+
 ## Features
 - **MAC Address Randomization:** MACSwitch allows you to generate and assign random MAC addresses to your network interfaces for enhanced privacy and anonymity.
 - **Custom MAC Address:** Users can specify a custom MAC address to set on their network interface, providing flexibility in MAC address configuration.
