@@ -24,7 +24,6 @@ def banner():
     print_red("                                               by M1dn1ght-MHR")
 
 def change_mac(interface, new_mac):
-    # print(f"Changing MAC address of {interface} to {new_mac}")
     subprocess.call(["sudo", "ifconfig", interface, "down"])
     subprocess.call(["sudo", "ifconfig", interface, "hw", "ether", new_mac])
     subprocess.call(["sudo", "ifconfig", interface, "up"])
@@ -63,8 +62,6 @@ def main():
         print(f"Changing MAC address randomly to: {new_mac}")
 
     change_mac(args.interface, new_mac)
-
-    # current_mac = get_current_mac(args.interface)
     if new_mac:
         print(f"MAC address successfully changed to: {new_mac}")
     else:
