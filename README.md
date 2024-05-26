@@ -22,7 +22,7 @@ python3 macswitch.py -i <interface> -m 00:11:22:33:44:55
 
 > Clone the MACSwitch repository from GitHub:
 ```
-git clone https://github.com/midnight-zain/Mac-switch.git
+git clone https://github.com/midknight-mihir/Mac-switch.git
 ```
 > Navigate to the MACSwitch directory:
 ```
