@@ -21,7 +21,7 @@ def banner():
 ╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚════╝░╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝
     """
     print(banner)
-    print_red("                                               by m1dn1ght-m1h1r")
+    print_red("                                               by zephryx01")
 
 def change_mac(interface, new_mac):
     subprocess.call(["sudo", "ifconfig", interface, "down"])
