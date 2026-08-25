@@ -7,6 +7,25 @@
 - **Verified Changes:** After changing the address, MACSwitch re-reads the interface and only reports success if the MAC actually changed - a failed `ifconfig` call (wrong interface, missing permissions, no `sudo`) is reported as a failure instead of silently claiming success.
 - **Manual Revert:** MACSwitch prints the interface's original MAC address before changing it; re-run with `-m <that address>` to restore it.
 - **Linux Support:** MACSwitch targets Linux distributions with `ifconfig`/`net-tools` installed, and exits with a clear message if either is missing.
+
+## Screenshots
+
+### Random MAC address, verified
+No `-m` generates a random MAC and confirms it actually took effect on the interface before reporting success.
+![Random MAC address change](docs/screenshots/random-mac.png)
+
+### Custom MAC address
+`-m aa:bb:cc:11:22:33` sets a specific address instead.
+![Custom MAC address change](docs/screenshots/custom-mac.png)
+
+### Invalid MAC rejected before touching the interface
+A malformed `-m` value is caught by format validation instead of being handed to `ifconfig`.
+![Invalid MAC address rejected](docs/screenshots/invalid-mac.png)
+
+### Missing interface handled cleanly
+A nonexistent interface produces a clear error and a non-zero exit code instead of a raw traceback.
+![Missing interface error](docs/screenshots/missing-interface.png)
+
 ## Usage
 To start using ```MACSwitch```, simply specify the network interface using ```-i``` or ```--interface``` and the desired MAC address using ```-m``` or ```--mac```.
 
