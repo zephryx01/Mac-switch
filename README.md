@@ -3,10 +3,10 @@
 
 ## Features
 - **MAC Address Randomization:** MACSwitch allows you to generate and assign random MAC addresses to your network interfaces for enhanced privacy and anonymity.
-- **Custom MAC Address:** Users can specify a custom MAC address to set on their network interface, providing flexibility in MAC address configuration.
-- **Interface Detection:** MACSwitch automatically detects available network interfaces on the system, simplifying the process of selecting the interface to modify.
-- **Undo Changes:** MACSwitch includes an option to revert to the original MAC address, restoring the network interface to its default configuration.
-- **Cross-Platform Compatibility:** MACSwitch is compatible with Linux distributions, providing a consistent experience across different environments.
+- **Custom MAC Address:** Users can specify a custom MAC address to set on their network interface, providing flexibility in MAC address configuration. The format is validated before anything touches the interface.
+- **Verified Changes:** After changing the address, MACSwitch re-reads the interface and only reports success if the MAC actually changed - a failed `ifconfig` call (wrong interface, missing permissions, no `sudo`) is reported as a failure instead of silently claiming success.
+- **Manual Revert:** MACSwitch prints the interface's original MAC address before changing it; re-run with `-m <that address>` to restore it.
+- **Linux Support:** MACSwitch targets Linux distributions with `ifconfig`/`net-tools` installed, and exits with a clear message if either is missing.
 ## Usage
 To start using ```MACSwitch```, simply specify the network interface using ```-i``` or ```--interface``` and the desired MAC address using ```-m``` or ```--mac```.
 
